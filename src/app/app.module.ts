@@ -3,27 +3,30 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import{HttpModule} from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
-//import {FlashMessagesModule} from 'angular2-flash-messages';
-
 
 import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+
 import { NavbarComponent } from './navbar/navbar.component';
 import { DateComponent } from './date/date.component';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { LoginComponent } from './login/login.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
-//import { NgFlashMessagesModule } from 'ng-flash-messages';
+import { FirstpageComponent } from './components/firstpage/firstpage.component';
+import { InsideComponent } from './components/inside/inside.component';
+import { ViewotherComponent } from './components/viewother/viewother.component';
+import { NavigationComponent } from './components/firstpage/navigation/navigation.component';
+import{PageNotFoundComponent} from './page-not-found/page-not-found.component';
+
+import { Login1Component } from './components/firstpage/login1/login1.component';
+import { Register1Component } from './components/firstpage/register1/register1.component';
+import { AboutComponent } from './components/firstpage/about/about.component';
+import { FeaturesComponent } from './components/firstpage/features/features.component';
+
 import {AuthService} from './service/auth.service';
 
-const applicationRoutes:Routes = [
-  {path: 'login', component:LoginComponent},
-  {path: 'register', component:RegisterComponent},
-  //{path : 'transactions', component:TransactionsComponent},
-  //{path : 'profilecontent', component:ProfileContentComponent},
-  //{path : 'mypost', component:MypostComponent}
 
-]
 
 @NgModule({
   declarations: [
@@ -33,15 +36,24 @@ const applicationRoutes:Routes = [
     ButtonsComponent,
     LoginComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    FirstpageComponent,
+    InsideComponent,
+    ViewotherComponent,
+    NavigationComponent,
+    PageNotFoundComponent,
+    Login1Component,
+    Register1Component,
+    AboutComponent,
+    FeaturesComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(applicationRoutes),
-    //NgFlashMessagesModule.forRoot()
-  //  FlashMessagesModule
+    AppRoutingModule
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
