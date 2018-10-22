@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 //import { NgFlashMessageService } from 'ng-flash-messages';
 import { AuthService} from '../service/auth.service';
+import { Http, Headers, RequestOptions } from "@angular/http";
+import { Router } from "@angular/router";
+import { Observable }  from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login1',
@@ -13,7 +17,8 @@ export class Login1Component implements OnInit {
   inputPassword:String;
 
   constructor(
-    private authService:AuthService
+    private authService:AuthService,
+    private router:Router
     //private ngFlashMessageService: NgFlashMessageService
   ) { }
 
@@ -29,6 +34,15 @@ export class Login1Component implements OnInit {
 
     this.authService.loginUser(user).subscribe(res=>{
       console.log(res);
+      if(res.logged){
+        localStorage.setItem('token', res.token);
+        this.router.navigate(['/inside']);
+        console.log(localStorage.getItem('token'));
+
+      }
+
+      //this.router.navigate(["/inside"], { "queryParams": res });
+    //  this.router.navigate(['/inside']);
     });
 
   }

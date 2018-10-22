@@ -25,6 +25,7 @@ export class AuthService {
     headers.append('Content-Type','application/json');
 
     return this.http.post("http://localhost:5550/users/login",user,{headers:headers}).pipe(map(res=>res.json()));
+  
 
   }
 }

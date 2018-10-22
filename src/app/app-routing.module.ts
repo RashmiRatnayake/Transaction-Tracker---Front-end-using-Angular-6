@@ -7,7 +7,7 @@ import { InsideComponent } from './components/inside/inside.component';
 import { ViewotherComponent } from './components/viewother/viewother.component';
 import { NavigationComponent } from './components/firstpage/navigation/navigation.component';
 import{PageNotFoundComponent} from './page-not-found/page-not-found.component';
-import { RegisterComponent } from './register/register.component';
+
 
 
 

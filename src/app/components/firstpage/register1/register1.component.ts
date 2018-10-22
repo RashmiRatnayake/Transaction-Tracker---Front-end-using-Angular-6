@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import { NgFlashMessageService } from 'ng-flash-messages';
 import { AuthService} from '../service/auth.service';
+import { Http, Headers, RequestOptions } from "@angular/http";
+import { Router } from "@angular/router";
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register1',
@@ -48,6 +51,7 @@ export class Register1Component implements OnInit {
     //});
 
  console.log("you're registered");
+ //this.router.navigate(['/login1']);
 });
 }
 }

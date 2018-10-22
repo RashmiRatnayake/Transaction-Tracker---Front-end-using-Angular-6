@@ -9,10 +9,10 @@ import {AppRoutingModule} from './app-routing.module';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { DateComponent } from './date/date.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { LoginComponent } from './login/login.component';
+
+
 import { FooterComponent } from './footer/footer.component';
-import { RegisterComponent } from './register/register.component';
+
 import { FirstpageComponent } from './components/firstpage/firstpage.component';
 import { InsideComponent } from './components/inside/inside.component';
 import { ViewotherComponent } from './components/viewother/viewother.component';
@@ -33,10 +33,9 @@ import {AuthService} from './service/auth.service';
     AppComponent,
     NavbarComponent,
     DateComponent,
-    ButtonsComponent,
-    LoginComponent,
+
     FooterComponent,
-    RegisterComponent,
+
     FirstpageComponent,
     InsideComponent,
     ViewotherComponent,
