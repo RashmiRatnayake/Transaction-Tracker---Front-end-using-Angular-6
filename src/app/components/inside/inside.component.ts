@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
+import {InsideModule} from './inside.module'
 
 @Component({
   selector: 'app-inside',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InsideComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router:Router) { }
 
   ngOnInit() {
   }

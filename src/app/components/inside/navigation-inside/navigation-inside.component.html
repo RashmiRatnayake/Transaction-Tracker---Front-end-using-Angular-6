@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['./profile']"><img src="assets/logo2.jpg" height="50" width="50" /></a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link " [routerLink]="['./profile']">Profile <span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item ">
+          <a class="nav-link " [routerLink]="['./news']">News </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['./messages']">Messages <span class="badge badge-info">10</span></a>
+        </li>
+        <li class="nav-item">
+
+          <a class="nav-link " [routerLink]="['./notifications']">Notifications <span class="badge badge-danger">42</span></a>
+        </li>
+
+      </ul>
+
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    &nbsp;&nbsp;&nbsp;
+    <ul class="navbar-nav mr=auto">
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary">Logout</button>
+        </li>
+    </ul>
+  </div>
+</nav>
