@@ -32,6 +32,9 @@ import { SidenavigationotherComponent } from './components/inside/other-profile/
 import { PostsotherComponent } from './components/inside/other-profile/postsother/postsother.component';
 import { InfootherComponent } from './components/inside/other-profile/infoother/infoother.component';
 
+import { AuthGuard } from './service/auth.guard';
+import {AuthService} from './service/auth.service';
+
 
 
 
@@ -44,10 +47,10 @@ const applicationRoutes:Routes = [
     {path: 'features',component:FeaturesComponent},
     {path: 'about',component:AboutComponent}
   ]},
-  {path: 'inside', component:InsideComponent, children: [
+  {path: 'inside', component:InsideComponent , children: [
     {path: '',redirectTo:'profile',pathMatch:'full'},
     {path: 'profile',  component: ProfileComponent, children:[
-      {path: '',redirectTo:'myposts',pathMatch:'full'},
+      {path: '',redirectTo:'mytransactions',pathMatch:'full'},
       {path:'myposts', component: MypostsComponent},
       {path:'mytransactions',component:MytransactionsComponent},
       {path:'myinfo', component: MyinfoComponent},
@@ -73,6 +76,8 @@ const applicationRoutes:Routes = [
     CommonModule,
     RouterModule.forRoot(applicationRoutes),
   ],
+  providers: [AuthService,AuthGuard],
   exports:[RouterModule]
+
 })
 export class AppRoutingModule { }

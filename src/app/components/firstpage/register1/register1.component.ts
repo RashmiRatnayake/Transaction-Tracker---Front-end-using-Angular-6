@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import { NgFlashMessageService } from 'ng-flash-messages';
-import { AuthService} from '../service/auth.service';
-import { Http, Headers, RequestOptions } from "@angular/http";
+import { AuthService} from '../../../service/auth.service';
+//import { Http, Headers, RequestOptions } from "@angular/http";
 import { Router } from "@angular/router";
+import { Observable }  from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -20,7 +21,8 @@ export class Register1Component implements OnInit {
   form_about_yourself:String;
   opt:String;
 
-  constructor(private authService:AuthService
+  constructor(private authService:AuthService,
+      private router:Router
   //private ngFlashMessageService: NgFlashMessageService
 ){
 
@@ -49,9 +51,13 @@ export class Register1Component implements OnInit {
 
 
     //});
+    if (res.state){
+    console.log("done");
+    this.router.navigate(['firstpage/login1']);
+  }
 
  console.log("you're registered");
- //this.router.navigate(['/login1']);
+
 });
 }
 }

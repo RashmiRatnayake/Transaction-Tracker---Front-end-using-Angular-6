@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { NgFlashMessageService } from 'ng-flash-messages';
-import { AuthService} from '../service/auth.service';
-import { Http, Headers, RequestOptions } from "@angular/http";
+import { AuthService} from '../../../service/auth.service';
+//import { Http, Headers, RequestOptions } from "@angular/http";
 import { Router } from "@angular/router";
 import { Observable }  from 'rxjs';
 import { map } from 'rxjs/operators';

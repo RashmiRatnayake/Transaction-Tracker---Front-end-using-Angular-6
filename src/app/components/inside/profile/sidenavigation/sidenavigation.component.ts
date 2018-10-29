@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'sidenavigation',
@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavigationComponent implements OnInit {
 
+  @Input() data;
   constructor() { }
 
   ngOnInit() {
+   // console.log(this.data)
   }
 
 }
