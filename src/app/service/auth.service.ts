@@ -16,7 +16,7 @@ export class AuthService {
   user:any;
   token:any;
   constructor(
-    private http:HttpClient,
+    private http:HttpClient
   //  public jwtHelper: JwtHelperService
   ) { }
   registerUser(user):Observable<any>{
@@ -53,7 +53,7 @@ myInfo(): Observable<any>{
   getProfile(): Observable<any> {
 
     console.log("getprof");
-    this.fetchToken());
+    this.fetchToken();
     console.log(this.token);
 
      const httpOptions={
@@ -61,7 +61,7 @@ myInfo(): Observable<any>{
       'Content-Type': 'application/json',
       'Authorization': "Bearer " + this.token
     })
-  });
+  };
   console.log(httpOptions);
 
   //  let headers = new Headers();

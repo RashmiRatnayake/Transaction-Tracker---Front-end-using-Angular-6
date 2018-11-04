@@ -63,8 +63,6 @@ const applicationRoutes:Routes = [
 
   ]}
 
-
-
  //{ path: "", redirectTo: "/firstpage", pathMatch: "full" },
  //{ path: '**', component: PageNotFoundComponent }
 

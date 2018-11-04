@@ -7,11 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidenavigationComponent implements OnInit {
 
-  @Input() data;
-  constructor() { }
+  @Input() data :any;
+  constructor() {
+    //console.log("userdata:",this.data);
+   }
 
   ngOnInit() {
-   // console.log(this.data)
+    console.log(this.data);
   }
 
 }
