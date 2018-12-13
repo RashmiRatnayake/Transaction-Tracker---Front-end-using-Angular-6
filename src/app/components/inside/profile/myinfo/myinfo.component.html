@@ -2,28 +2,28 @@
 
         <div class="profile-content">
           <div class="card border-light mb-3" style="max-width: 60rem;">
-  <div class="card-header">Basic Info</div>
+  <div class="card-header">Basic Info<div style="text-align:right"><a class="edit" href="#">Edit </a></div></div>
   <div class="card-body">
-    <h4 class="card-title">Business Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a></h4>
-    <h5 class="card-title">Business Tagline&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a></h5>
-    <p class="card-text">We are a company suppplying household items.....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a></p>
+    <h4 class="card-title">Business Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{profile.businessName}}</h4>
+    <h5 class="card-title">Business Tagline :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{this.profile.tagline}}</h5>
+    <p class="card-text">Description : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{this.profile.description}}</p>
   </div>
 </div>
 <div class="card border-light mb-3" style="max-width: 60rem;">
-<div class="card-header">Contact Details</div>
+<div class="card-header">Contact Details<div style="text-align:right"><a class="edit" href="#">Edit </a></div></div>
 <div class="card-body">
-  <strong>Address:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
-  <strong>e-mail address:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
-  <strong>Contact Person:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
-  <strong>Contact No:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
+  <strong>Address: {{this.profile.businessAddress}}</strong><br><br>
+  <strong>e-mail address: {{this.profile.contactEmail}}</strong><br><br>
+  <strong>Contact Person: {{this.profile.contactName}}</strong><br><br>
+  <strong>Contact No: {{this.profile.contactNo}}</strong><br><br>
 </div>
 </div>
 <div class="card border-light mb-3" style="max-width: 60rem;">
-<div class="card-header">Bank Details</div>
+<div class="card-header">Bank Details<div style="text-align:right"><a class="edit" href="#">Edit </a></div></div>
 <div class="card-body">
-  <strong>Bank:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
-  <strong>Account Name:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
-  <strong>Account Number:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="edit" href="#">Edit </a><br><br>
+  <strong>Bank: {{this.profile.bank}}</strong><br><br>
+  <strong>Account Name: {{this.profile.accountName}}</strong><br><br>
+  <strong>Account Number: {{this.profile.accountNo}}</strong><br><br>
 
 </div>
 </div>
