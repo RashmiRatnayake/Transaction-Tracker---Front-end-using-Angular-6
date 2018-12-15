@@ -12,8 +12,8 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  user:any;
+export class MessageService {
+  circle:any;
   token:any;
   constructor(
     private http:HttpClient
@@ -22,7 +22,7 @@ export class UserService {
 
 
 
-  getfullProfile(): Observable<any> {
+  getmessages(): Observable<any> {
     this.fetchToken();
      const httpOptions={
        headers : new HttpHeaders({
@@ -30,7 +30,7 @@ export class UserService {
       'Authorization': "Bearer " + this.token
     })
   };
-    return this.http.get("http://localhost:5550/profile/profile",httpOptions);
+    return this.http.get("http://localhost:5550/messages/messages",httpOptions);
 
 }
 
@@ -41,18 +41,6 @@ this.token = token;
 //console.log(token);
 }
 
-
-
-logout(){
-    this.token  = null;
-  //  this.user = null;
-    localStorage.clear();
-
-  }
-
-  loggedIn() {
-    // console.log(this.jwtHelper.isTokenExpired());
-  }
 
 
 }
