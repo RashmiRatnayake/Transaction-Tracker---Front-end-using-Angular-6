@@ -11,66 +11,18 @@
     </tr>
   </thead>
   <tbody>
+    <ng-container *ngFor="let transaction of mytransaction">
     <tr class="table-secondary">
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
+      <th scope="row"> {{transaction.supplier}} </th>
+      <td>{{transaction.amountSettled}}</td>
+      <td>{{transaction.amountPending}}</td>
+      <td>{{transaction.dueDate}}</td>
+      <td>{{transaction.trnStatus}}</td>
       <td><a class="history" href="#">View update history </a></td>
     </tr>
-    <tr>
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td><a class="history" href="#">View update history </a></td>
-    </tr>
-
-    <tr class="table-secondary">
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td><a class="history" href="#">View update history </a></td>
-    </tr>
-    <tr>
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td><a class="history" href="#">View update history </a></td>
-    </tr>
-
-    <tr class="table-secondary">
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td><a class="history" href="#">View update history </a></td>
-    </tr>
-    <tr>
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td><a class="history" href="#">View update history </a></td>
-    </tr>
-
-    <tr class="table-secondary">
-      <th scope="row">Business name </th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td><a class="history" href="#">View update history </a></td>
-    </tr>
-
+    </ng-container>
+    
+    
   </tbody>
 </table>
 <div>
