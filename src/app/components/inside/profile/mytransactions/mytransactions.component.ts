@@ -14,7 +14,7 @@ export class MytransactionsComponent implements OnInit {
   @Input() data:any; 
   constructor(
 
-    private userService:TransactionService
+    private transactionService:TransactionService
 
   ) { }
 
@@ -22,7 +22,7 @@ export class MytransactionsComponent implements OnInit {
   
   ngOnInit() {
     
-    this.userService
+    this.transactionService
         .gettransactions()
         .subscribe(res=>{
           console.log(res) 
