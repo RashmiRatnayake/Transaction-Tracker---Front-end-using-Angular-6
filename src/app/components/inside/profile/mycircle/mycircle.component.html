@@ -1,34 +1,16 @@
 <div class="col-md-12">
+<h3 class="card-header">My Circle</h3>
 <div class="container">
 
 <ul class="list-group">
-<li class="list-group-item d-flex justify-content-between align-items-center">
-
-    Business Name 1
-
-
-
-
-    <button type="button" class="btn btn-success btn-sm">View Profile</button>
-
-
-    <button type="button" class="btn btn-info btn-sm">Message</button>
-      <button type="button" class="btn btn-danger btn-sm">Remove Connection</button>
-
-</li>
-
+  <ng-container *ngFor="let friend of mycircle">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Business Name 2
+    {{friend.supplierId}}
     <button type="button" class="btn btn-success btn-sm">View Profile</button>
     <button type="button" class="btn btn-info btn-sm">Message</button>
     <button type="button" class="btn btn-danger btn-sm">Remove Connection</button>
   </li>
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    Business Name 3
-    <button type="button" class="btn btn-success btn-sm">View Profile</button>
-    <button type="button" class="btn btn-info btn-sm">Message</button>
-    <button type="button" class="btn btn-danger btn-sm">Remove Connection</button>
-  </li>
+  </ng-container>
 </ul>
 </div>
 </div>
