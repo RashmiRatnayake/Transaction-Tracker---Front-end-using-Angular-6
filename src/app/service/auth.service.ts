@@ -64,13 +64,7 @@ myInfo(): Observable<any>{
   };
   console.log(httpOptions);
 
-  //  let headers = new Headers();
-    //this.token=token;
-  //  headers.set('Authorization',"Bearer " + this.token);
-//  console.log(this.token);
-
-    //headers.append('Content-Type','application/json');
-    //console.log(headers);
+ 
     return this.http.get("http://localhost:5550/users/profile",httpOptions);
 
 }

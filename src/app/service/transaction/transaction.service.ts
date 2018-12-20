@@ -15,10 +15,26 @@ import { map } from 'rxjs/operators';
 export class TransactionService {
   transaction:any;
   token:any;
+  newtransaction:any;
   constructor(
     private http:HttpClient
   //  public jwtHelper: JwtHelperService
   ) { }
+
+  
+  
+  
+  addTransaction(newtransaction):Observable<any>{
+
+    //console.log(user);
+      let headers=new HttpHeaders();
+      headers.append('Content-Type','application/json');
+
+      return this.http.post<any>("http://localhost:5550/transactions/addnew",newtransaction,{headers:headers});
+
+}
+
+
 
 
 

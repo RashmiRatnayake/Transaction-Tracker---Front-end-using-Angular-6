@@ -1,6 +1,90 @@
 <div class="col-md-9">
-    <h3 class="card-header">My Transactions</h3>
-<table class="table table-hover">
+    <h3 class="card-header">My Transactions
+      
+      <button *ngIf=!supplier type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransaction" style="float: right; ">Create new transaction</button> 
+     </h3>
+          <div class="modal" id="addTransaction">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Add new transaction</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    
+                      <form role="form" method="post" class="transaction-form" (submit)="newTransactionData()">
+                    
+                          <fieldset>
+                            
+                               <!--  <div class="form-group">
+                                    <label for="exampleSelect1">Select other party: </label>
+                                    <select required [ngModel]="model" class="form-control" id="exampleSelect1">
+                                      <option *ngFor="#circle of mycircle" [ngValue]="circle">{{circle.name}}</option>
+                
+                                    </select>
+                                  </div> -->
+                              
+                            
+                            <div class="form-group">
+                              <label for="dueDate">Due Date : </label>
+                              <input type="text" class="form-control" [(ngModel)]="dueDate" name="dueDate" placeholder="Enter due date (format 2000-01-01)">
+                            </div>
+                            <div class="form-group">
+                                <small id="amount" class="form-text text-muted">Amounts should be in Rupees only.</small>
+                                <label for="totalAmount">Total Amount : </label>
+                                <input type="number" class="form-control" [(ngModel)]="totalAmount" name="totalAmount" placeholder="Enter total amount">
+                              </div>
+                              <div class="form-group">
+                                  
+                                  <label for="amountSettled">Amount Settled: </label>
+                                  <input type="number" class="form-control" [(ngModel)]="amountSettled" name="amountSettled" placeholder="Enter amount settled">
+                                </div>
+                              <div class="form-group">
+                                  
+                                  <label for="amountPending">Amount Pending: </label>
+                                  <input type="number" class="form-control"[(ngModel)]="amountPending" name="amountPending" placeholder="Enter amount pending">
+                                </div>
+                                <div class="form-group">
+                                    <label for="trnStatus">Select status of transaction: </label>
+                                    <select class="form-control"[(ngModel)]="trnStatus" name="trnStatus">
+                                      <option  value="paid">paid</option>
+                                      <option value="partially paid">partially paid</option>
+                                      <option value="unpaid">unpaid</option>
+                                    </select>
+                                  </div>
+                                <div class="form-group">
+                                    <label for="description">Transaction Description: </label>
+                                    <textarea class="form-control" [(ngModel)]="trnDescription" name="trnDescription" rows="5"></textarea>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="remarks"> Remarks: </label>
+                                      <textarea class="form-control" [(ngModel)]="remarks" name="remarks" rows="3"></textarea>
+                                    </div>
+                            
+                            
+                          
+
+
+                  
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Save </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </fieldset>
+              </form>
+               
+            </div>
+                </div>
+              </div>
+            
+      
+      </div>
+     </div>
+    
+    <br>
+    <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Transaction with</th>
@@ -53,5 +137,5 @@
       <a class="page-link" href="#">&raquo;</a>
     </li>
   </ul>
-</div>
+
 </div>
