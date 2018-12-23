@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { Observable }  from 'rxjs';
 import { map } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-register1',
   templateUrl: './register1.component.html',

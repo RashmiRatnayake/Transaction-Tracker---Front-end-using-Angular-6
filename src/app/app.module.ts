@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
+import { CompareValidatorModule } from 'angular-compare-validator';
 
 import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -82,7 +83,8 @@ import { InfootherComponent } from './components/inside/other-profile/infoother/
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CompareValidatorModule
 
   ],
   providers: [AuthService],

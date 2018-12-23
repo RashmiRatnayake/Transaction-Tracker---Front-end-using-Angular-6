@@ -16,7 +16,7 @@ export class MytransactionsComponent implements OnInit {
   transaction:any;
   mytransaction:any;
   myprofile:any;
-  supplier:boolean;
+  isSupplier:boolean;
   show:boolean;
   mycircle:any;
 
@@ -27,6 +27,8 @@ export class MytransactionsComponent implements OnInit {
   remarks:String;
   dueDate:Date;
   trnStatus:String;
+  otherParty:String;
+  supplier:String;
 
 
 
@@ -56,7 +58,7 @@ export class MytransactionsComponent implements OnInit {
         .subscribe(res=>{
           this.myprofile=res.user
           if (this.myprofile.length>0 && this.myprofile.userType=="supplier"){
-            this.supplier=true
+            this.isSupplier=true
           }
           //else this.supplier=false
         })
@@ -72,13 +74,15 @@ export class MytransactionsComponent implements OnInit {
     
       newTransactionData(){
         const newtransaction={
+          supplier:this.supplier,
           amountSettled:this.amountSettled,
           amountPending:this.amountPending,
           totalAmount:this.totalAmount,
           trnDescription:this.trnDescription,
           remarks:this.remarks,
           dueDate:this.dueDate,
-          trnStatus:this.trnStatus
+          trnStatus:this.trnStatus,
+          otherParty:this.otherParty
 
         };
         
