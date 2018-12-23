@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import { NgFlashMessageService } from 'ng-flash-messages';
 import { AuthService} from '../../../service/auth.service';
 //import { Http, Headers, RequestOptions } from "@angular/http";
 import { Router } from "@angular/router";
@@ -23,11 +22,9 @@ export class Register1Component implements OnInit {
   opt:String;
 
   constructor(private authService:AuthService,
-      private router:Router
-  //private ngFlashMessageService: NgFlashMessageService
-){
-
-  }
+              private router:Router
+  
+              ){}
 
 
   ngOnInit() {
@@ -42,23 +39,17 @@ export class Register1Component implements OnInit {
       tp:this.tp,
       form_about_yourself:this.form_about_yourself,
       opt:this.opt
-  };
-  this.authService.registerUser(user).subscribe(res=>{
-  //  this.flashMessage.show("you are registered!!",{cssClass:'alert-success',timeout:1000});
-//this.ngFlashMessageService.showFlashMessage({
-// Array of messages each will be displayed in new line
-      //messages: ["You're registered"],
-      //type: 'success'
-
-
-    //});
+    };
+  
+    this.authService.registerUser(user).subscribe(res=>{
+  
     if (res.state){
-    console.log("done");
+    //console.log("done");
     this.router.navigate(['firstpage/login1']);
+   }
+
+    console.log("you're registered");
+
+    });
   }
-
- console.log("you're registered");
-
-});
-}
 }
