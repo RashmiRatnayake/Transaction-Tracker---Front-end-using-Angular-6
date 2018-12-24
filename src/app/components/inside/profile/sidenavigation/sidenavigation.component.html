@@ -1,43 +1,40 @@
 <div class="container">
-    <div class="row profile">
+  <div class="row profile">
 
-			<div class="profile-sidebar">
+		<div class="profile-sidebar">
 				<!-- SIDEBAR USERPIC -->
 
 				<!-- END SIDEBAR USERPIC -->
 				<!-- SIDEBAR USER TITLE -->
-				<div class="profile-usertitle">
-          <div class="profile-usertitle-pic">
-  					<img src="assets/pic.jpg" class="img-responsive" alt="">
-  				</div>
+			<div class="profile-usertitle">
+        <div class="profile-usertitle-pic">
+  				<img src="assets/pic.jpg" class="img-responsive" alt="">
+  			</div>
 
-					<div class="profile-usertitle-name">
-					{{data.businessName}}
-					</div>
-					<div class="profile-usertitle-job">
-						{{data.tagline}}
-					</div>
+				<div class="profile-usertitle-name">{{data.businessName}}
 				</div>
+				<div class="profile-usertitle-job">{{data.tagline}}
+				</div>
+			</div>
 
 
 		</div>
 	</div>
 
-    <ul class="nav nav-pills flex-column">
-<li class="nav-item">
+  <ul class="nav nav-pills flex-column">
+		<li class="nav-item">
 
-  <a class="nav-link " [routerLink]="['./myinfo']">Profile Info</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" [routerLink]="['./mytransactions']">My Transactions</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" [routerLink]="['./myposts']">My Posts</a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" [routerLink]="['./mycircle']">My Circle</a>
-</li>
+  		<a class="nav-link " [routerLink]="['./myinfo']">Profile Info</a>
+		</li>
+		<li class="nav-item">
+  		<a class="nav-link" [routerLink]="['./mytransactions']">My Transactions</a>
+		</li>
+		<li class="nav-item">
+  		<a class="nav-link" [routerLink]="['./myposts']">My Posts</a>
+		</li>
+		<li class="nav-item">
+  		<a class="nav-link" [routerLink]="['./mycircle']">My Circle</a>
+		</li>
 
-
-</ul>
+	</ul>
 </div>

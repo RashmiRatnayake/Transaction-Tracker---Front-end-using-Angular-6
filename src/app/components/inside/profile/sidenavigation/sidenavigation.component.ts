@@ -9,7 +9,7 @@ export class SidenavigationComponent implements OnInit {
 
   @Input() data :any;
   constructor() {
-    //console.log("userdata:",this.data);
+    
    }
 
   ngOnInit() {

@@ -7,17 +7,16 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class MessageService {
-  circle:any;
+export class UserListService {
+  userlist:any;
   token:any;
   constructor(
     private http:HttpClient
-  
   ) { }
 
 
 
-  getmessages(): Observable<any> {
+  getuserlist(): Observable<any> {
     this.fetchToken();
      const httpOptions={
        headers : new HttpHeaders({
@@ -25,9 +24,11 @@ export class MessageService {
       'Authorization': "Bearer " + this.token
       })
     };
-    return this.http.get("http://localhost:5550/messages/messages",httpOptions);
+    return this.http.get("http://localhost:5550/userlist/userlist",httpOptions);
 
   }
+
+
 
 
   fetchToken(){

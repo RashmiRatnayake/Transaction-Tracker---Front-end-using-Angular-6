@@ -44,20 +44,22 @@ const insideRoutes:Routes = [
     HttpModule,
     RouterModule.forChild(insideRoutes)
   ],
+
   exports:[RouterModule],
-  declarations: [NewsComponent,
+
+  declarations: [
+    NewsComponent,
     ProfileComponent,
-  NotificationsComponent,
-MessagesComponent,
-  OtherProfileComponent,
-  SidenavigationComponent,
-  MypostsComponent,
-  MytransactionsComponent,
-  SidenavigationotherComponent,
-  PostsotherComponent,
-  
-  InfootherComponent,
-  MyinfoComponent,
-  MycircleComponent]
+    NotificationsComponent,
+    MessagesComponent,
+    OtherProfileComponent,
+    SidenavigationComponent,
+    MypostsComponent,
+    MytransactionsComponent,
+    SidenavigationotherComponent,
+    PostsotherComponent,
+    InfootherComponent,
+    MyinfoComponent,
+    MycircleComponent]
 })
 export class InsideModule { }

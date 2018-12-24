@@ -36,9 +36,6 @@ import { AuthGuard } from './service/auth.guard';
 import {AuthService} from './service/auth.service';
 
 
-
-
-
 const applicationRoutes:Routes = [
   {path: '',redirectTo:'firstpage',pathMatch:'full'},
   {path: 'firstpage',component :FirstpageComponent, children: [

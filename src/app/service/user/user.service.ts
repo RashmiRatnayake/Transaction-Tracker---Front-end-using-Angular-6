@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
-//import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-//import { JwtHelperService } from '@auth0/angular-jwt';
-
 
 
 
@@ -17,7 +13,7 @@ export class UserService {
   token:any;
   constructor(
     private http:HttpClient
-  //  public jwtHelper: JwtHelperService
+  
   ) { }
 
 
@@ -28,30 +24,23 @@ export class UserService {
        headers : new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': "Bearer " + this.token
-    })
-  };
+      })
+    };
     return this.http.get("http://localhost:5550/profile/profile",httpOptions);
-
-}
-
-
-fetchToken(){
-const token = localStorage.getItem("token");
-this.token = token;
-//console.log(token);
-}
-
-
-
-logout(){
-    this.token  = null;
-  //  this.user = null;
-    localStorage.clear();
 
   }
 
-  loggedIn() {
-    // console.log(this.jwtHelper.isTokenExpired());
+
+  fetchToken(){
+    const token = localStorage.getItem("token");
+    this.token = token;
+
+  }
+
+  logout(){
+    this.token  = null;
+    localStorage.clear();
+
   }
 
 

@@ -60,27 +60,24 @@ myInfo(): Observable<any>{
        headers : new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': "Bearer " + this.token
-    })
-  };
-  console.log(httpOptions);
+      })
+    };
+    console.log(httpOptions);
 
  
     return this.http.get("http://localhost:5550/users/profile",httpOptions);
 
-}
+  }
 
 
-fetchToken(){
-const token = localStorage.getItem("token");
-this.token = token;
-//console.log(token);
-}
+  fetchToken(){
+    const token = localStorage.getItem("token");
+    this.token = token;
 
+  }
 
-
-logout(){
+  logout(){
     this.token  = null;
-  //  this.user = null;
     localStorage.clear();
 
   }
@@ -88,6 +85,5 @@ logout(){
   loggedIn() {
     // console.log(this.jwtHelper.isTokenExpired());
   }
-
 
 }

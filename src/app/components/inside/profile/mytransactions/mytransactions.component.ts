@@ -38,7 +38,7 @@ export class MytransactionsComponent implements OnInit {
     private router:Router,
     private transactionService:TransactionService,
     private userService:UserService,
-    private circleService:CircleService,
+    private circleService:CircleService
 
   ) { }
 
@@ -56,11 +56,14 @@ export class MytransactionsComponent implements OnInit {
     this.userService
         .getfullProfile()
         .subscribe(res=>{
+          //console.log(res.user);
           this.myprofile=res.user
-          if (this.myprofile.length>0 && this.myprofile.userType=="supplier"){
+          if (res.user.userType=="Supplier"){
             this.isSupplier=true
+            
           }
-          //else this.supplier=false
+          else {this.isSupplier=false;}
+          console.log("isSupplier: ",this.isSupplier);
         })
 
     this.circleService
