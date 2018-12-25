@@ -1,3 +1,23 @@
-.modal {z-index: 1050;}
 
-.modal-dialog {z-index: 1050;}
+
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    padding-top: 100px;
+    left: 0;
+    
+    top: 0;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-dialog {
+    z-index: 1050;
+    width: auto;
+    max-width: 960px; 
+  }
+  

@@ -1,7 +1,8 @@
 <h3 class="card-header">Notifications</h3>
 <div class="container">
     <h4 class="card-header">Due Today</h4>
-    <ng-container *ngFor="let notificationToday of myNotificationsToday">
+    <!-- <div *ngIf=isNotificationToday > -->
+    <ng-container  *ngFor="let notificationToday of myNotificationsToday">
     <div class="card mb-3">
       <div class="card-body">
         <h6 class="card-title text-muted">Supplier: {{notificationToday.suppliername}}</h6>
@@ -10,18 +11,21 @@
       </div>
     </div>
     </ng-container>
+    <!-- </div> -->
 </div>
 <div class="container">
     <h4 class="card-header">Due in 3 days</h4>
-    <!-- <ng-container *ngFor="let notificationIn3Days of myNotificationsIn3Days"> -->
+    <!-- <div *ngIf=isNotificationToday > -->
+    <ng-container *ngFor="let notificationIn3Days of myNotificationsIn3Days">
     <div class="card mb-3">
       <div class="card-body">
-        <h6 class="card-title text-muted">Supplier:</h6>
-        <h6 class="card-title text-muted">Dealer:</h6>
-        <h6 class="card-title text-muted">Amount Pending: Rs.</h6>
+        <h6 class="card-title text-muted">Supplier:{{notificationIn3Days.suppliername}}</h6>
+        <h6 class="card-title text-muted">Dealer:{{notificationIn3Days.dealername}}</h6>
+        <h6 class="card-title text-muted">Amount Pending: Rs.{{notificationIn3Days.amountPending}}</h6>
       </div>
     </div>
-    <!-- </ng-container> -->
+     </ng-container>
+    <!-- </div>  -->
 </div>
 <div class="container">
     <h4 class="card-header">Late</h4>

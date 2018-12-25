@@ -5,7 +5,7 @@
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pendingTransactions" style="float: center; ">View pending transactions</button>
   </h3>
   <div class="modal" id="addTransaction">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" >
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Add new transaction</h5>
@@ -149,6 +149,8 @@
       <th scope="col">Transaction Status</th>
       <th scope="col">Description</th>
       <th scope="col">Update History</th>
+      <th *ngIf=isSupplier scole="col">Update</th>
+      <th *ngIf=isSupplier scole="col">Delete</th>
       
     </tr>
   </thead>
@@ -162,6 +164,31 @@
       <td>{{transaction.trnStatus}}</td>
       <td>{{transaction.trnDescription}}</td>
       <td><a class="history" href="#">View update history </a></td>
+      <td *ngIf=isSupplier><button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTransaction">Update</button></td>
+      <td *ngIf=isSupplier><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTransaction">Delete</button></td>
+      
+      <div class="modal" id="deleteTransaction">
+          <div class="modal-dialog" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Delete transaction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <p>Are you sure you want to delete this transaction?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Yes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+
+    
     </tr>
     </ng-container>
     
