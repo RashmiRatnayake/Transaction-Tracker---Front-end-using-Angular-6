@@ -15,6 +15,8 @@ export class MytransactionsComponent implements OnInit {
   user:any;
   transaction:any;
   mytransaction:any;
+  pendingtransaction:any;
+  mypendingtransaction:any;
   myprofile:any;
   isSupplier:boolean;
   show:boolean;
@@ -53,6 +55,14 @@ export class MytransactionsComponent implements OnInit {
           this.mytransaction = res.transaction
         })
 
+    this.transactionService
+        .getpendingtransactions()
+        .subscribe(res=>{
+          console.log(res) 
+          this.mypendingtransaction = res.pendingtransaction;
+          //console.log(res.pendingtransaction);
+        })
+
     this.userService
         .getfullProfile()
         .subscribe(res=>{
@@ -77,7 +87,7 @@ export class MytransactionsComponent implements OnInit {
     
       newTransactionData(){
         const newtransaction={
-          supplier:this.supplier,
+          supplier:this.myprofile.userId,
           amountSettled:this.amountSettled,
           amountPending:this.amountPending,
           totalAmount:this.totalAmount,
@@ -88,12 +98,12 @@ export class MytransactionsComponent implements OnInit {
           otherParty:this.otherParty
 
         };
-        
+        console.log(newtransaction);
       this.transactionService.addTransaction(newtransaction).subscribe(res=>{
      console.log("inside method");
         if (res.state){
         console.log("done");
-       //this.router.navigate(['inside/profile/mytransactions']);
+       //this.router.navigate(['inside/profile']);
       }
   
     

@@ -2,6 +2,7 @@
   <h3 class="card-header">My Transactions
       
   <button *ngIf=isSupplier type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransaction" style="float: right; ">Create new transaction</button> 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pendingTransactions" style="float: center; ">View pending transactions</button>
   </h3>
   <div class="modal" id="addTransaction">
     <div class="modal-dialog" role="document">
@@ -20,13 +21,13 @@
 
               <div class="form-group">              
                 <label for="supplier">Supplier: </label>
-                <input type="text" class="form-control"[(ngModel)]="supplier" name="supplier" value={{myprofile.businessName}}  readonly>
+                <input type="text" class="form-control" [(ngModel)]="supplier"  name="supplier" value={{this.myprofile.businessName}}  readonly="readonly">
               </div>
 
               <div class="form-group">
-                <label for="otherParty">Select retailer: </label>
-                <select required class="form-control" [ngModel]="otherParty" name="otherParty" >
-                  <option *ngFor="let circle of mycircle" name="otherParty"  [ngValue]="circle.businessName">{{circle.businessName}}</option>
+                <label for="otherParty">Select dealer: </label>
+                <select required class="form-control" [(ngModel)]="otherParty" name="otherParty" >
+                  <option *ngFor="let circle of mycircle" name="otherParty"  [ngValue]="this.circle.businessName">{{this.circle.businessName}}</option>
                 </select>
               </div>
                        
@@ -84,9 +85,60 @@
             
       
   </div>
+
+  <div class="modal" id="pendingTransactions">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Pending Transactions</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="container">
+                  
+                  <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Transaction with</th>
+                          <th scope="col">Amount Settled</th>
+                          <th scope="col">Amount Pending</th>
+                          <th scope="col">Due Date</th>
+                          <th scope="col">Transaction Status</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Update History</th>
+                          
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <ng-container *ngFor="let pendingtransaction of mypendingtransaction">
+                        <tr class="table-secondary">
+                          <th scope="row"> {{pendingtransaction.supplier}} </th>
+                          <td>{{pendingtransaction.amountSettled}}</td>
+                          <td>{{pendingtransaction.amountPending}}</td>
+                          <td>{{pendingtransaction.duedate}}</td>
+                          <td>{{pendingtransaction.trnStatus}}</td>
+                          <td>{{pendingtransaction.trnDescription}}</td>
+                          <td><a class="history" href="#">View update history </a></td>
+                        </tr>
+                        </ng-container>
+                        
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                      
+            
+                 
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
     
 <br>
+
 <table class="table table-hover">
   <thead>
     <tr>
