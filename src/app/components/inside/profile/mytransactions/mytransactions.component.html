@@ -177,12 +177,19 @@
                 </button>
               </div>
               <div class="modal-body">
+                  <form role="form" method="post" class="delete-transaction" (submit)="deleteTransactionData(transaction)">
+                      
+              <fieldset>
                   <p>Are you sure you want to delete this transaction?</p>
-                </div>
+                
+
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Yes</button>
+               <button type="submit" class="btn btn-primary" (click)="deleteTransactionData(transaction)">Yes</button>
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 </div>
+              </fieldset>
+                  </form>
+              </div>
               </div>
             </div>
           </div>

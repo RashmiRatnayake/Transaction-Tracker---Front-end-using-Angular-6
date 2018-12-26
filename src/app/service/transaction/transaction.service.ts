@@ -12,6 +12,7 @@ export class TransactionService {
   transaction:any;
   token:any;
   newtransaction:any;
+  deletetransaction:any;
   constructor(
     private http:HttpClient
   ) { }
@@ -29,6 +30,16 @@ export class TransactionService {
 
   }
 
+  
+  deleteTransaction(deletetransaction):Observable<any>{
+    this.fetchToken();
+    let headers=new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    headers.append('Authorization',"Bearer " + this.token);
+
+    return this.http.post<any>("http://localhost:5550/transactions/delete",deletetransaction,{headers:headers});
+
+}
 
 
   gettransactions(): Observable<any> {

@@ -32,6 +32,8 @@ export class MytransactionsComponent implements OnInit {
   otherParty:String;
   supplier:String;
 
+  trnId:String;
+
 
 
 
@@ -112,6 +114,23 @@ export class MytransactionsComponent implements OnInit {
   
 
     }
+
+    deleteTransactionData(transaction){
+     
+      console.log(transaction);
+    this.transactionService.deleteTransaction(transaction).subscribe(res=>{
+  // console.log("inside method");
+      if (res.state){
+      console.log("done deletion");
+     //this.router.navigate(['inside/profile']);
+    }
+
+  
+  });
+
+
+
+  }
 
 
     }
