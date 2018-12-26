@@ -163,9 +163,134 @@
       <td>{{transaction.duedate}}</td>
       <td>{{transaction.trnStatus}}</td>
       <td>{{transaction.trnDescription}}</td>
-      <td><a class="history" href="#">View update history </a></td>
-      <td *ngIf=isSupplier><button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTransaction">Update</button></td>
-      <td *ngIf=isSupplier><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTransaction">Delete</button></td>
+      <td><button type="button" class="btn btn-primary" data-toggle="modal" (click)="viewHistory(transaction)" data-target="#transactionHistory">View History</button>
+        <div class="modal" id="transactionHistory">
+            <div class="modal-dialog" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Transaction History</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        
+                        <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">Date of updation</th>
+                                <th scope="col">Total Amount</th>
+                                <th scope="col">Amount Settled</th>
+                                <th scope="col">Amount Pending</th>
+                                <th scope="col">Due Date</th>
+                                <th scope="col">Transaction Status</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Remarks</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <ng-container *ngFor="let history of myhistory">
+                              <tr class="table-secondary">
+                                <th scope="row"> {{history.modifiedDate}} </th>
+                                <td>{{history.totalAmount}}</td>
+                                <td>{{history.amountSettled}}</td>
+                                <td>{{history.amountPending}}</td>
+                                <td>{{history.duedate}}</td>
+                                <td>{{history.trnStatus}}</td>
+                                <td>{{history.trnDescription}}</td>
+                                <td>{{history.remarks}}</td>
+                              </tr>
+                              </ng-container>
+                              
+                              
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+            
+                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                             </div>
+                </div>
+                </div>
+              </div>
+            </div>
+      
+      
+      
+      
+      
+      </td>
+      <td *ngIf=isSupplier><button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTransaction">Update</button>
+        <div class="modal" id="updateTransaction">
+            <div class="modal-dialog" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Update transaction</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <form role="form" method="post" class="update-transaction" (submit)="updateTransactionData(transaction)">
+                        
+                <fieldset>
+                    
+                    <div class="form-group">
+                        <label for="dueDate">Due Date : </label>
+                        <input type="text" class="form-control" [(ngModel)]="transaction.duedate" name="dueDate" placeholder="Enter due date (format 2000-01-01)">
+                      </div>
+        
+                      <div class="form-group">
+                        <small id="amount" class="form-text text-muted">Amounts should be in Rupees only.</small>
+                        <label for="totalAmount">Total Amount : </label>
+                        <input type="number" class="form-control" [(ngModel)]="transaction.totalAmount" name="totalAmount" placeholder="Enter total amount">
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="amountSettled">Amount Settled: </label>
+                        <input type="number" class="form-control" [(ngModel)]="transaction.amountSettled" name="amountSettled" placeholder="Enter amount settled">
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="amountPending">Amount Pending: </label>
+                        <input type="number" class="form-control"[(ngModel)]="transaction.amountPending" name="amountPending" placeholder="Enter amount pending">
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="trnStatus">Select status of transaction: </label>
+                        <select class="form-control"[(ngModel)]="transaction.trnStatus" name="trnStatus">
+                          <option  value="paid">paid</option>
+                          <option value="partially paid">partially paid</option>
+                          <option value="unpaid">unpaid</option>
+                        </select>
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="description">Transaction Description: </label>
+                        <textarea class="form-control" [(ngModel)]="transaction.trnDescription" name="trnDescription" rows="5"></textarea>
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="remarks"> Remarks: </label>
+                        <textarea class="form-control" [(ngModel)]="transaction.remarks" name="remarks" rows="3"></textarea>
+                      </div>
+  
+                  <div class="modal-footer">
+                 <button type="submit" class="btn btn-primary" (click)="deleteTransactionData(transaction)">Yes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  </div>
+                </fieldset>
+                    </form>
+                </div>
+                </div>
+              </div>
+            </div>
+      
+      
+      </td>
+      <td *ngIf=isSupplier><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTransaction">Delete</button>
       
       <div class="modal" id="deleteTransaction">
           <div class="modal-dialog" >
@@ -193,6 +318,10 @@
               </div>
             </div>
           </div>
+        </td>
+
+
+          
       
 
     

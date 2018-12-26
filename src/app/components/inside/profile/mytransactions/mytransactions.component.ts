@@ -34,6 +34,8 @@ export class MytransactionsComponent implements OnInit {
 
   trnId:String;
 
+  myhistory:any;
+
 
 
 
@@ -116,8 +118,7 @@ export class MytransactionsComponent implements OnInit {
     }
 
     deleteTransactionData(transaction){
-     
-      console.log(transaction);
+
     this.transactionService.deleteTransaction(transaction).subscribe(res=>{
   // console.log("inside method");
       if (res.state){
@@ -132,5 +133,39 @@ export class MytransactionsComponent implements OnInit {
 
   }
 
+  viewHistory(transaction){
+    
+        this.transactionService.viewHistroy(transaction).subscribe(res=>{
+      // console.log("inside method");
+         this.myhistory=res.history;
+    
+      
+      });
+    
+    
+    
+      }
+    
+
+
+  
+  updateTransactionData(transaction){
+    
+     console.log(transaction);
+     
+
+   this.transactionService.updateTransaction(transaction).subscribe(res=>{
+ // console.log("inside method");
+     if (res.state){
+     console.log("done updation");
+    //this.router.navigate(['inside/profile']);
+   }
+
+ 
+ });
+
+
+
+ }
 
     }

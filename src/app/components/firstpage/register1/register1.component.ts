@@ -42,12 +42,12 @@ export class Register1Component implements OnInit {
     };
   
     this.authService.registerUser(user).subscribe(res=>{
-  
+  console.log(res)
     if (res.state){
     //console.log("done");
     this.router.navigate(['firstpage/login1']);
    }
-
+   
     console.log("you're registered");
 
     });
