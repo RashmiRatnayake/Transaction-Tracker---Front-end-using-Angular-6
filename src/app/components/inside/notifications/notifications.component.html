@@ -29,13 +29,13 @@
 </div>
 <div class="container">
     <h4 class="card-header">Late</h4>
-    <!-- <ng-container *ngFor="let notificationLate of myNotificationsLate"> -->
+     <ng-container *ngFor="let notificationLate of myNotificationsLate">
     <div class="card mb-3">
       <div class="card-body">
-          <h6 class="card-title text-muted">Supplier:</h6>
-          <h6 class="card-title text-muted">Dealer:</h6>
-          <h6 class="card-title text-muted">Amount Pending: Rs.</h6>
+          <h6 class="card-title text-muted">Supplier:{{notificationLate.suppliername}}</h6>
+          <h6 class="card-title text-muted">Dealer:{{notificationLate.dealername}}</h6>
+          <h6 class="card-title text-muted">Amount Pending: Rs.{{notificationLate.amountPending}}</h6>
       </div>
     </div>
-    <!-- </ng-container> -->
+     </ng-container> 
 </div>

@@ -14,6 +14,9 @@ export class NotificationsComponent implements OnInit {
   myNotificationsIn3Days:any;
   notificationIn3Days:any;
 
+  myNotificationsLate:any;
+  notificationLate:any;
+
   isNotificationToday:boolean;
   isNotificationIn3Days:boolean;
 
@@ -58,6 +61,26 @@ export class NotificationsComponent implements OnInit {
           //else {this.isNotificationIn3Days=false;}
         //})
 
+
+
+
+
+        this.notificationService
+        .getNotificationsLate()
+        .subscribe(res=>{
+          //console.log(res.notificationIn3Days.length>0) 
+          //if (res!='undefined'){
+           // if (res.notificationIn3Days.length>0){
+            //this.isNotificationIn3Days=true
+            this.myNotificationsLate = res.notificationLate
+            console.log(this.myNotificationsLate)
+            })
+          //}
+          //else {this.isNotificationIn3Days=false;}
+        //})
           }
+
+
+    
 
 }
