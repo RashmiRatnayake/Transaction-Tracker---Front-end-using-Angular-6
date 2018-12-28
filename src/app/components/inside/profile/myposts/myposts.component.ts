@@ -48,6 +48,22 @@ export class MypostsComponent implements OnInit {
 
   }
 
+  deletePost(post){
+    
+        this.postService.deletePost(post).subscribe(res=>{
+      // console.log("inside method");
+          if (res.state){
+          console.log("done deletion of post");
+         //this.router.navigate(['inside/profile']);
+        }
+    
+      
+      });
+    
+    
+    
+      }
+
   newPostData(){
     const newpost={
       title:this.title,
