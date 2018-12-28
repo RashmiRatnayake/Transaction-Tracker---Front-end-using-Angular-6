@@ -30,6 +30,16 @@ export class UserService {
 
   }
 
+  editInformation(information):Observable<any>{
+    this.fetchToken();
+    let headers=new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    headers.append('Authorization',"Bearer " + this.token);
+  
+    return this.http.post<any>("http://localhost:5550/profile/editInfo",information,{headers:headers});
+  
+  }
+
 
   fetchToken(){
     const token = localStorage.getItem("token");

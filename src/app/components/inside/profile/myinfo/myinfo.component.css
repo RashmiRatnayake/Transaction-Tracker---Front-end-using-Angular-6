@@ -9,3 +9,12 @@
   background: #fff;
   min-height: 60px;
 }
+
+.container {
+  background-color: #F7F7F7;
+  /* just in case there no content*/
+  padding: 5px 5px 30px;
+  margin: 0 auto 25px;
+  margin-top: 5px;
+
+}

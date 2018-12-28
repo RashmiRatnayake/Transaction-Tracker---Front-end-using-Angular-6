@@ -6,9 +6,49 @@
   <ng-container *ngFor="let friend of mycircle">
   <li class="list-group-item d-flex justify-content-between align-items-center">
     {{friend.businessName}}
-    <button type="button" class="btn btn-success btn-sm">View Profile</button>
-    <button type="button" class="btn btn-info btn-sm">Message</button>
-    <button type="button" class="btn btn-danger btn-sm">Remove </button>
+    <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#viewFriend">View Profile</button>
+     
+    <div class="modal" id="viewFriend">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Business Name :{{friend.businessName}}</h5>
+              
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <h6 class="modal-title">Business Tagline :{{friend.tagline}}</h6>
+                    <p>Description : {{friend.description}}</p> 
+     
+                </div>
+              <div class="container">
+               <p>Business Address : {{friend.businessAddress}}</p> 
+               <p>Contact Name : {{friend.contactName}}</p> 
+               <p>Contact Designation : {{friend.contactDesignation}}</p> 
+               <p>Contact Number : {{friend.contactNo}}</p> 
+               <p>Contact Email : {{friend.contactEmail}}</p> 
+              </div>
+              <div class="container">
+                  <p>Bank : {{friend.bank}}</p> 
+                  <p>Account Name : {{friend.accountName}}</p> 
+                  <p>Account Number : {{friend.accountNo}}</p> 
+                  
+                 </div>
+                  <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+               
+            </div>
+          </div>
+        </div>
+            
+      </div>
+    
+    <button type="button" class="btn btn-danger btn-sm" (click)="removeSubscription(friend)">Remove </button>
   </li>
   </ng-container>
 </ul>

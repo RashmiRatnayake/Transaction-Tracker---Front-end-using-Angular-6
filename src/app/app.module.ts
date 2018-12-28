@@ -43,6 +43,7 @@ import { MycircleComponent } from './components/inside/profile/mycircle/mycircle
 import { SidenavigationotherComponent } from './components/inside/other-profile/sidenavigationother/sidenavigationother.component';
 import { PostsotherComponent } from './components/inside/other-profile/postsother/postsother.component';
 import { InfootherComponent } from './components/inside/other-profile/infoother/infoother.component';
+import { MoreUsersComponent } from 'src/app/components/inside/more-users/more-users.component';
 
 
 
@@ -69,6 +70,7 @@ import { InfootherComponent } from './components/inside/other-profile/infoother/
     NewsComponent,
     MessagesComponent,
     NotificationsComponent,
+    MoreUsersComponent,
 
     SidenavigationComponent,
     MypostsComponent,

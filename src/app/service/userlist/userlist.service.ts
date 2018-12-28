@@ -28,6 +28,15 @@ export class UserListService {
 
   }
 
+  subscribeUser(subscribeuser):Observable<any>{
+    this.fetchToken();
+    let headers=new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    headers.append('Authorization',"Bearer " + this.token);
+  
+    return this.http.post<any>("http://localhost:5550/userlist/subscribe",subscribeuser,{headers:headers});
+  
+  }
 
 
 

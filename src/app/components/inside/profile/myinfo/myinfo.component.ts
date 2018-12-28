@@ -34,4 +34,23 @@ export class MyinfoComponent implements OnInit {
 
   }
 
+  editInformation(information){
+    
+     console.log(information);
+     
+
+   this.userService.editInformation(information).subscribe(res=>{
+ // console.log("inside method");
+     if (res.state){
+     console.log("done updation");
+    //this.router.navigate(['inside/profile']);
+   }
+
+ 
+ });
+
+
+
+ }
+
 }

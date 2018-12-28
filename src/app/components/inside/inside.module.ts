@@ -20,6 +20,7 @@ import { PostsotherComponent } from './other-profile/postsother/postsother.compo
 import { InfootherComponent } from './other-profile/infoother/infoother.component';
 import { MyinfoComponent } from './profile/myinfo/myinfo.component';
 import { MycircleComponent } from './profile/mycircle/mycircle.component';
+import { MoreUsersComponent } from './more-users/more-users.component';
 
 
 
@@ -60,6 +61,7 @@ const insideRoutes:Routes = [
     PostsotherComponent,
     InfootherComponent,
     MyinfoComponent,
-    MycircleComponent]
+    MycircleComponent,
+    MoreUsersComponent]
 })
 export class InsideModule { }

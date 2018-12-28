@@ -20,7 +20,7 @@ export class NavigationInsideComponent implements OnInit {
 
 
   userlist:any;
-  queryField: FormControl = new FormControl();
+  //queryField: FormControl = new FormControl();
 
   constructor(  private authService:AuthService,
                 private router:Router,

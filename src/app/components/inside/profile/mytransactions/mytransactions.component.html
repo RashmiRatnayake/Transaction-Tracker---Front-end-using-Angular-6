@@ -107,20 +107,20 @@
                           <th scope="col">Due Date</th>
                           <th scope="col">Transaction Status</th>
                           <th scope="col">Description</th>
-                          <th scope="col">Update History</th>
+                          
                           
                         </tr>
                       </thead>
                       <tbody>
                         <ng-container *ngFor="let pendingtransaction of mypendingtransaction">
                         <tr class="table-secondary">
-                          <th scope="row"> {{pendingtransaction.supplier}} </th>
+                          <th scope="row"> {{pendingtransaction.businessName}} </th>
                           <td>{{pendingtransaction.amountSettled}}</td>
                           <td>{{pendingtransaction.amountPending}}</td>
                           <td>{{pendingtransaction.duedate}}</td>
                           <td>{{pendingtransaction.trnStatus}}</td>
                           <td>{{pendingtransaction.trnDescription}}</td>
-                          <td><a class="history" href="#">View update history </a></td>
+                          
                         </tr>
                         </ng-container>
                         
@@ -143,12 +143,12 @@
   <thead>
     <tr>
       <th scope="col">Transaction with</th>
-      <th scope="col">Amount Settled</th>
-      <th scope="col">Amount Pending</th>
+      <th scope="col">Amount Settled (LKR)</th>
+      <th scope="col">Amount Pending (LKR)</th>
       <th scope="col">Due Date</th>
       <th scope="col">Transaction Status</th>
       <th scope="col">Description</th>
-      <th scope="col">Update History</th>
+      <th scope="col">Updation History</th>
       <th *ngIf=isSupplier scole="col">Update</th>
       <th *ngIf=isSupplier scole="col">Delete</th>
       
@@ -157,7 +157,7 @@
   <tbody>
     <ng-container *ngFor="let transaction of mytransaction">
     <tr class="table-secondary">
-      <th scope="row"> {{transaction.supplier}} </th>
+      <th scope="row"> {{transaction.businessName}} </th>
       <td>{{transaction.amountSettled}}</td>
       <td>{{transaction.amountPending}}</td>
       <td>{{transaction.duedate}}</td>
@@ -180,9 +180,9 @@
                             <thead>
                               <tr>
                                 <th scope="col">Date of updation</th>
-                                <th scope="col">Total Amount</th>
-                                <th scope="col">Amount Settled</th>
-                                <th scope="col">Amount Pending</th>
+                                <th scope="col">Total Amount (LKR)</th>
+                                <th scope="col">Amount Settled (LKR)</th>
+                                <th scope="col">Amount Pending (LKR)</th>
                                 <th scope="col">Due Date</th>
                                 <th scope="col">Transaction Status</th>
                                 <th scope="col">Description</th>
@@ -278,7 +278,7 @@
                       </div>
   
                   <div class="modal-footer">
-                 <button type="submit" class="btn btn-primary" (click)="deleteTransactionData(transaction)">Yes</button>
+                 <button type="submit" class="btn btn-primary" (click)="updateTransactionData(transaction)">Yes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                   </div>
                 </fieldset>
@@ -331,7 +331,7 @@
     
   </tbody>
 </table>
-<div>
+<!-- <div>
   <ul class="pagination pagination-sm">
     <li class="page-item disabled">
       <a class="page-link" href="#">&laquo;</a>
@@ -356,4 +356,4 @@
     </li>
   </ul>
 
-</div>
+</div> -->

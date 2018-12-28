@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PostService} from '../../../../service/post/post.service';
+import {UserService} from '../../../../service/user/user.service';
 
 @Component({
   selector: 'app-myposts',
@@ -10,11 +11,16 @@ export class MypostsComponent implements OnInit {
 
   post:any;
   mypost:any;
+  title:String;
+  content:String;
+
+  myprofile:any;
 
   
   constructor(
 
-    private postService:PostService
+    private postService:PostService,
+    private userService:UserService
 
   ) { }
 
@@ -29,10 +35,39 @@ export class MypostsComponent implements OnInit {
           this.mypost = res.post
         })
 
-    
+        this.userService
+        .getfullProfile()
+        .subscribe(res=>{
+          //console.log(res.user);
+          this.myprofile=res.user
+          
+          
+        })
 
 
 
   }
+
+  newPostData(){
+    const newpost={
+      title:this.title,
+      postContent:this.content,
+      postedBy:this.myprofile.userId
+      
+    };
+   
+  this.postService.addPost(newpost).subscribe(res=>{
+ console.log("inside method");
+    if (res.state){
+    console.log("done adding post");
+   //this.router.navigate(['inside/profile']);
+  }
+
+
+});
+
+
+
+}
 
 }

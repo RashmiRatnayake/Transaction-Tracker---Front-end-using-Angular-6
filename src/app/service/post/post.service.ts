@@ -28,6 +28,17 @@ export class PostService {
 
   }
 
+  
+  addPost(newpost):Observable<any>{
+    this.fetchToken();
+    let headers=new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    headers.append('Authorization',"Bearer " + this.token);
+
+    return this.http.post<any>("http://localhost:5550/posts/newpost",newpost,{headers:headers});
+
+}
+
 
   fetchToken(){
     const token = localStorage.getItem("token");

@@ -21,6 +21,7 @@ import { OtherProfileComponent } from './components/inside/other-profile/other-p
 import { NewsComponent } from './components/inside/news/news.component';
 import { MessagesComponent } from './components/inside/messages/messages.component';
 import { NotificationsComponent } from './components/inside/notifications/notifications.component';
+import { MoreUsersComponent } from './components/inside/more-users/more-users.component';
 
 import { SidenavigationComponent } from './components/inside/profile/sidenavigation/sidenavigation.component';
 import { MypostsComponent } from './components/inside/profile/myposts/myposts.component';
@@ -56,6 +57,7 @@ const applicationRoutes:Routes = [
     {path: 'news',component:NewsComponent},
     {path: 'notifications',component:NotificationsComponent},
     {path: 'messages',component:MessagesComponent},
+    {path: 'moreusers',component:MoreUsersComponent},
     {path: 'other_profile',component:OtherProfileComponent}
 
   ]}
