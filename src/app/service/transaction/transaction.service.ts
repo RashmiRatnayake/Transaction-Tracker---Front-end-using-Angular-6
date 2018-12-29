@@ -78,15 +78,7 @@ updateTransaction(transaction):Observable<any>{
       }),
      params : new HttpParams().set('trnId',trnId)
     };
-    
 
-
-   
-    
-    
-    //console.log(httpOptions);
-    
-    
     return this.http.get("http://localhost:5550/transactions/viewHistory",httpOptions);
 
   }

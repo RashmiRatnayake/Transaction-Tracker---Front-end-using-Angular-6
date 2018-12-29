@@ -1,8 +1,8 @@
 <h3 class="card-header">Notifications</h3>
 <div class="container">
-    <h4 class="card-header">Due Today</h4>
-    <!-- <div *ngIf=isNotificationToday > -->
-    <ng-container  *ngFor="let notificationToday of myNotificationsToday">
+  <h4 class="card-header">Due Today</h4>
+    
+  <ng-container  *ngFor="let notificationToday of myNotificationsToday">
     <div class="card mb-3">
       <div class="card-body">
         <h6 class="card-title text-muted">Supplier: {{notificationToday.suppliername}}</h6>
@@ -10,13 +10,14 @@
         <h6 class="card-title text-muted">Amount Pending : Rs.{{notificationToday.amountPending}}</h6>
       </div>
     </div>
-    </ng-container>
-    <!-- </div> -->
+  </ng-container>
+    
 </div>
+
 <div class="container">
-    <h4 class="card-header">Due in 3 days</h4>
-    <!-- <div *ngIf=isNotificationToday > -->
-    <ng-container *ngFor="let notificationIn3Days of myNotificationsIn3Days">
+  <h4 class="card-header">Due in 3 days</h4>
+    
+  <ng-container *ngFor="let notificationIn3Days of myNotificationsIn3Days">
     <div class="card mb-3">
       <div class="card-body">
         <h6 class="card-title text-muted">Supplier:{{notificationIn3Days.suppliername}}</h6>
@@ -24,18 +25,19 @@
         <h6 class="card-title text-muted">Amount Pending: Rs.{{notificationIn3Days.amountPending}}</h6>
       </div>
     </div>
-     </ng-container>
-    <!-- </div>  -->
+  </ng-container>
+    
 </div>
+
 <div class="container">
-    <h4 class="card-header">Late</h4>
-     <ng-container *ngFor="let notificationLate of myNotificationsLate">
+  <h4 class="card-header">Late</h4>
+  <ng-container *ngFor="let notificationLate of myNotificationsLate">
     <div class="card mb-3">
       <div class="card-body">
-          <h6 class="card-title text-muted">Supplier:{{notificationLate.suppliername}}</h6>
-          <h6 class="card-title text-muted">Dealer:{{notificationLate.dealername}}</h6>
-          <h6 class="card-title text-muted">Amount Pending: Rs.{{notificationLate.amountPending}}</h6>
+        <h6 class="card-title text-muted">Supplier:{{notificationLate.suppliername}}</h6>
+        <h6 class="card-title text-muted">Dealer:{{notificationLate.dealername}}</h6>
+        <h6 class="card-title text-muted">Amount Pending: Rs.{{notificationLate.amountPending}}</h6>
       </div>
     </div>
-     </ng-container> 
+  </ng-container> 
 </div>

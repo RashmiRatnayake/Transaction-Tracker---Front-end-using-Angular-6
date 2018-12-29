@@ -36,10 +36,6 @@ export class MytransactionsComponent implements OnInit {
 
   myhistory:any;
 
-
-
-
- // @Input() data:any; 
   constructor(
     private router:Router,
     private transactionService:TransactionService,
@@ -55,22 +51,22 @@ export class MytransactionsComponent implements OnInit {
     this.transactionService
         .gettransactions()
         .subscribe(res=>{
-          //console.log(res) 
+          
           this.mytransaction = res.transaction
         })
 
     this.transactionService
         .getpendingtransactions()
         .subscribe(res=>{
-          console.log(res) 
+           
           this.mypendingtransaction = res.pendingtransaction;
-          //console.log(res.pendingtransaction);
+          
         })
 
     this.userService
         .getfullProfile()
         .subscribe(res=>{
-          //console.log(res.user);
+          
           this.myprofile=res.user
           if (res.user.userType=="Supplier"){
             this.isSupplier=true
@@ -86,11 +82,10 @@ export class MytransactionsComponent implements OnInit {
           this.mycircle=res.circle
         })   
 
-     
-      }
+  }
     
-      newTransactionData(){
-        const newtransaction={
+  newTransactionData(){
+    const newtransaction={
           supplier:this.myprofile.userId,
           amountSettled:this.amountSettled,
           amountPending:this.amountPending,
@@ -101,72 +96,51 @@ export class MytransactionsComponent implements OnInit {
           trnStatus:this.trnStatus,
           otherParty:this.otherParty
 
-        };
-        console.log(newtransaction);
-      this.transactionService.addTransaction(newtransaction).subscribe(res=>{
-     console.log("inside method");
+    };
+    //console.log(newtransaction);
+    this.transactionService.addTransaction(newtransaction).subscribe(res=>{
+      console.log("inside method");
         if (res.state){
-        console.log("done");
-       //this.router.navigate(['inside/profile']);
-      }
-  
-    
+          console.log("done");
+       
+        }
     });
 
-  
+  }
 
-    }
-
-    deleteTransactionData(transaction){
+  deleteTransactionData(transaction){
 
     this.transactionService.deleteTransaction(transaction).subscribe(res=>{
-  // console.log("inside method");
       if (res.state){
-      console.log("done deletion");
-     //this.router.navigate(['inside/profile']);
-    }
+        console.log("done deletion"); 
+      }
 
   
-  });
-
-
+    });
 
   }
 
   viewHistory(transaction){
     
-        this.transactionService.viewHistroy(transaction).subscribe(res=>{
-      // console.log("inside method");
-         this.myhistory=res.history;
+    this.transactionService.viewHistroy(transaction).subscribe(res=>{
+     
+      this.myhistory=res.history;
+ 
+    });
+   
+  }
     
-      
-      });
+
+  updateTransactionData(transaction){
+
+    this.transactionService.updateTransaction(transaction).subscribe(res=>{
     
-    
+      if (res.state){
+        console.log("done updation");
     
       }
-    
-
-
-  
-  updateTransactionData(transaction){
-    
-     console.log(transaction);
-     
-
-   this.transactionService.updateTransaction(transaction).subscribe(res=>{
- // console.log("inside method");
-     if (res.state){
-     console.log("done updation");
-    //this.router.navigate(['inside/profile']);
-   }
-
- 
- });
-
-
-
- }
+    });
+  }
  
 
-    }
+}

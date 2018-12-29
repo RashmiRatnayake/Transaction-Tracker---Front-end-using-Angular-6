@@ -1,123 +1,119 @@
 <div class="col-md-9">
-    <h3 class="card-header">My Profile Information
+  <h3 class="card-header">My Profile Information
         
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInformation" style="float: right; ">Edit information</button> 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editInformation" style="float: right; ">Edit information</button> 
     
-    </h3>
-    <div class="modal" id="editInformation">
-        <div class="modal-dialog" >
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Edit Information</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form role="form" method="post" class="edit-information" (submit)="editInformation(this.profile)">
+  </h3>
+  <div class="modal" id="editInformation">
+    <div class="modal-dialog" >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form role="form" method="post" class="edit-information" (submit)="editInformation(this.profile)">
                     
             <fieldset>
                 
-                <div class="form-group">
-                    <label for="businessName">Business Name : </label>
-                    <input type="text" class="form-control" [(ngModel)]="this.profile.businessName" name="businessName">
-                  </div>
-                  <div class="form-group">
-                      <label for="tagline">Business Tagline : </label>
-                      <input type="text" class="form-control" [(ngModel)]="this.profile.tagline" name="tagline">
-                    </div>
+              <div class="form-group">
+                <label for="businessName">Business Name : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.businessName" name="businessName">
+              </div>
+              <div class="form-group">
+                <label for="tagline">Business Tagline : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.tagline" name="tagline">
+              </div>
     
-                    <div class="form-group">
-                        <label for="description">Description : </label>
-                        <input type="text" class="form-control" [(ngModel)]="this.profile.description" name="description">
-                      </div>
+              <div class="form-group">
+                <label for="description">Description : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.description" name="description">
+              </div>
     
-                      <div class="form-group">
-                          <label for="businessAddress">Address : </label>
-                          <input type="text" class="form-control" [(ngModel)]="this.profile.businessAddress" name="businessAddress">
-                        </div>
+              <div class="form-group">
+                <label for="businessAddress">Address : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.businessAddress" name="businessAddress">
+              </div>
       
-                        <div class="form-group">
-                            <label for="contactEmail">Contact Email : </label>
-                            <input type="text" class="form-control" [(ngModel)]="this.profile.contactEmail" name="contactEmail">
-                          </div>
+              <div class="form-group">
+                <label for="contactEmail">Contact Email : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.contactEmail" name="contactEmail">
+              </div>
 
-                          <div class="form-group">
-                              <label for="contactName">Contact Name : </label>
-                              <input type="text" class="form-control" [(ngModel)]="this.profile.contactName" name="contactName">
-                            </div>
+              <div class="form-group">
+                <label for="contactName">Contact Name : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.contactName" name="contactName">
+              </div>
 
-                            <div class="form-group">
-                                <label for="contactNo">Contact Number : </label>
-                                <input type="text" class="form-control" [(ngModel)]="this.profile.contactNumber" name="contactNumber">
-                              </div>
+              <div class="form-group">
+                <label for="contactNo">Contact Number : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.contactNumber" name="contactNumber">
+              </div>
 
-                              <div class="form-group">
-                                  <label for="bank">Bank : </label>
-                                  <input type="text" class="form-control" [(ngModel)]="this.profile.bank" name="bank">
-                                </div>
+              <div class="form-group">
+                <label for="bank">Bank : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.bank" name="bank">
+              </div>
 
-                                <div class="form-group">
-                                    <label for="accountName">Account Name : </label>
-                                    <input type="text" class="form-control" [(ngModel)]="this.profile.accountName" name="accountName">
-                                  </div>
+              <div class="form-group">
+                <label for="accountName">Account Name : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.accountName" name="accountName">
+              </div>
                   
-                                  <div class="form-group">
-                                      <label for="accountNo">Account Number : </label>
-                                      <input type="text" class="form-control" [(ngModel)]="this.profile.accountNo" name="accountNo">
-                                    </div>
+              <div class="form-group">
+                <label for="accountNo">Account Number : </label>
+                <input type="text" class="form-control" [(ngModel)]="this.profile.accountNo" name="accountNo">
+              </div>
     
                   
               <div class="modal-footer">
-             <button type="submit" class="btn btn-primary" (click)="editInformation(this.profile)">Yes</button>
+                <button type="submit" class="btn btn-primary" (click)="editInformation(this.profile)">Yes</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
               </div>
             </fieldset>
-                </form>
-            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <div class="profile-content">
+      <div class="card border-light mb-3" style="max-width: 60rem;">
+        <div class="card-header">Basic Info
+        </div>
+        <div class="card-body" >
+          <h4 class="card-title">Business Name :{{this.profile.businessName}}</h4>
+          <h6 class="card-title">Business Tagline : {{this.profile.tagline}}</h6>
+          <p class="card-text">Description : {{this.profile.description}}</p>
+        </div>
+      </div>   
+      <div class="card border-light mb-3" style="max-width: 60rem;">
+        <div class="card-header">Contact Details</div>
+          <div class="card-body"  >
+            <strong>Address: {{this.profile.businessAddress}}</strong><br><br>
+            <strong>e-mail address: {{this.profile.contactEmail}}</strong><br><br>
+            <strong>Contact Person: {{this.profile.contactName}}</strong><br><br>
+            <strong>Contact No: {{this.profile.contactNo}}</strong><br><br>
+          </div>
+        </div>
+        <div class="card border-light mb-3" style="max-width: 60rem;">
+          <div class="card-header">Bank Details<div style="text-align:right"></div>
+            <div class="card-body" >
+              <strong>Bank: {{this.profile.bank}}</strong><br><br>
+              <strong>Account Name: {{this.profile.accountName}}</strong><br><br>
+              <strong>Account Number: {{this.profile.accountNo}}</strong><br><br>
+
             </div>
           </div>
         </div>
-  
-              
-        
-    
-
-  <div class="container">
-        <div class="profile-content">
-          <div class="card border-light mb-3" style="max-width: 60rem;">
-  <div class="card-header">Basic Info
-   
+      </div>
+    </div>
   </div>
-  <div class="card-body" >
-    
-    <h4 class="card-title">Business Name :{{this.profile.businessName}}</h4>
-    <h6 class="card-title">Business Tagline : {{this.profile.tagline}}</h6>
-    <p class="card-text">Description : {{this.profile.description}}</p>
-  </div>
-</div>
-<div class="card border-light mb-3" style="max-width: 60rem;">
-<div class="card-header">Contact Details</div>
-<div class="card-body"  >
-  <strong>Address: {{this.profile.businessAddress}}</strong><br><br>
-  <strong>e-mail address: {{this.profile.contactEmail}}</strong><br><br>
-  <strong>Contact Person: {{this.profile.contactName}}</strong><br><br>
-  <strong>Contact No: {{this.profile.contactNo}}</strong><br><br>
-</div>
-</div>
-<div class="card border-light mb-3" style="max-width: 60rem;">
-<div class="card-header">Bank Details<div style="text-align:right"></div>
-<div class="card-body" >
-  <strong>Bank: {{this.profile.bank}}</strong><br><br>
-  <strong>Account Name: {{this.profile.accountName}}</strong><br><br>
-  <strong>Account Number: {{this.profile.accountNo}}</strong><br><br>
 
-</div>
-</div>
-
-        </div>
-</div>
-</div>
 <!-- <div class="col-md-9">
         <div class="manage-account">
           <div class="card border-primary mb-3" style="max-width: 60rem;">

@@ -41,23 +41,18 @@ export class MoreUsersComponent implements OnInit {
     const subscribeuserData={
       subscribeto:subscribeuser.userId,
       subscriber:this.myprofile.userId
-
-
     } 
 
 
-        this.userListService.subscribeUser(subscribeuserData).subscribe(res=>{
-      // console.log("inside method");
-          if (res.state){
-          console.log("done subscription");
-         //this.router.navigate(['inside/profile']);
-        }
-    
+    this.userListService.subscribeUser(subscribeuserData).subscribe(res=>{
       
+      if (res.state){
+        console.log("done subscription");
+        
+        }
+
       });
-    
-    
-    
+
       }
 
 }

@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import { NgFlashMessageService } from 'ng-flash-messages';
 import { AuthService} from '../../../service/auth.service';
-//import { Http, Headers, RequestOptions } from "@angular/http";
 import { Router } from "@angular/router";
 import { Observable }  from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -19,7 +17,7 @@ export class Login1Component implements OnInit {
   constructor(
     private authService:AuthService,
     private router:Router
-    //private ngFlashMessageService: NgFlashMessageService
+    
   ) { }
 
   ngOnInit() {
@@ -41,8 +39,7 @@ export class Login1Component implements OnInit {
 
       }
 
-      //this.router.navigate(["/inside"], { "queryParams": res });
-    //  this.router.navigate(['/inside']);
+      
     });
 
   }

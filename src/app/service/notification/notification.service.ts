@@ -26,8 +26,7 @@ export class NotificationService {
       'Authorization': "Bearer " + this.token
       })
     };
-    //console.log(httpOptions)
-    //console.log(this.token)
+    
     return this.http.get("http://localhost:5550/notifications/my-notifications-today",httpOptions);
 
   }
@@ -40,7 +39,7 @@ export class NotificationService {
       'Authorization': "Bearer " + this.token
       })
     };
-    //console.log(httpOptions)
+    
     return this.http.get("http://localhost:5550/notifications/my-notifications-in3days",httpOptions);
 
   }
@@ -53,7 +52,7 @@ export class NotificationService {
       'Authorization': "Bearer " + this.token
       })
     };
-    //console.log(httpOptions)
+    
     return this.http.get("http://localhost:5550/notifications/my-notifications-late",httpOptions);
 
   }

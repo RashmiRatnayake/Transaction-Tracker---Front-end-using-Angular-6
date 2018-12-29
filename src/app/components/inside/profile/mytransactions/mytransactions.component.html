@@ -1,9 +1,9 @@
 <div class="col-md-9">
-  <h3 class="card-header">My Transactions
-      
+  <h3 class="card-header">My Transactions    
   <button *ngIf=isSupplier type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransaction" style="float: right; ">Create new transaction</button> 
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pendingTransactions" style="float: center; ">View pending transactions</button>
   </h3>
+
   <div class="modal" id="addTransaction">
     <div class="modal-dialog" >
       <div class="modal-content">
@@ -21,7 +21,7 @@
 
               <div class="form-group">              
                 <label for="supplier">Supplier: </label>
-                <input type="text" class="form-control" [(ngModel)]="supplier"  name="supplier" value={{this.myprofile.businessName}}  readonly="readonly">
+                <input type="text" class="form-control" [(ngModel)]="supplier"  name="supplier" value=myprofile.businessName  readonly="readonly">
               </div>
 
               <div class="form-group">
@@ -87,54 +87,54 @@
   </div>
 
   <div class="modal" id="pendingTransactions">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Pending Transactions</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Pending Transactions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <div class="container">
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
                   
-                  <table class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th scope="col">Transaction with</th>
-                          <th scope="col">Amount Settled</th>
-                          <th scope="col">Amount Pending</th>
-                          <th scope="col">Due Date</th>
-                          <th scope="col">Transaction Status</th>
-                          <th scope="col">Description</th>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Transaction with</th>
+                  <th scope="col">Amount Settled</th>
+                  <th scope="col">Amount Pending</th>
+                  <th scope="col">Due Date</th>
+                  <th scope="col">Transaction Status</th>
+                  <th scope="col">Description</th>
                           
                           
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <ng-container *ngFor="let pendingtransaction of mypendingtransaction">
-                        <tr class="table-secondary">
-                          <th scope="row"> {{pendingtransaction.businessName}} </th>
-                          <td>{{pendingtransaction.amountSettled}}</td>
-                          <td>{{pendingtransaction.amountPending}}</td>
-                          <td>{{pendingtransaction.duedate}}</td>
-                          <td>{{pendingtransaction.trnStatus}}</td>
-                          <td>{{pendingtransaction.trnDescription}}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let pendingtransaction of mypendingtransaction">
+                  <tr class="table-secondary">
+                    <th scope="row"> {{pendingtransaction.businessName}} </th>
+                    <td>{{pendingtransaction.amountSettled}}</td>
+                    <td>{{pendingtransaction.amountPending}}</td>
+                    <td>{{pendingtransaction.duedate}}</td>
+                    <td>{{pendingtransaction.trnStatus}}</td>
+                    <td>{{pendingtransaction.trnDescription}}</td>
                           
-                        </tr>
-                        </ng-container>
+                  </tr>
+                </ng-container>
                         
                         
-                      </tbody>
-                    </table>
-                  </div>
+              </tbody>
+            </table>
+          </div>
                       
             
                  
-          </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
     
 <br>
@@ -165,79 +165,75 @@
       <td>{{transaction.trnDescription}}</td>
       <td><button type="button" class="btn btn-primary" data-toggle="modal" (click)="viewHistory(transaction)" data-target="#transactionHistory">View History</button>
         <div class="modal" id="transactionHistory">
-            <div class="modal-dialog" >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Transaction History</h5>
+          <div class="modal-dialog" >
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Transaction History</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
+                  <div class="container">
                         
-                        <table class="table table-hover">
-                            <thead>
-                              <tr>
-                                <th scope="col">Date of updation</th>
-                                <th scope="col">Total Amount (LKR)</th>
-                                <th scope="col">Amount Settled (LKR)</th>
-                                <th scope="col">Amount Pending (LKR)</th>
-                                <th scope="col">Due Date</th>
-                                <th scope="col">Transaction Status</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Remarks</th>
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Date of updation</th>
+                          <th scope="col">Total Amount (LKR)</th>
+                          <th scope="col">Amount Settled (LKR)</th>
+                          <th scope="col">Amount Pending (LKR)</th>
+                          <th scope="col">Due Date</th>
+                          <th scope="col">Transaction Status</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Remarks</th>
                                 
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <ng-container *ngFor="let history of myhistory">
-                              <tr class="table-secondary">
-                                <th scope="row"> {{history.modifiedDate}} </th>
-                                <td>{{history.totalAmount}}</td>
-                                <td>{{history.amountSettled}}</td>
-                                <td>{{history.amountPending}}</td>
-                                <td>{{history.duedate}}</td>
-                                <td>{{history.trnStatus}}</td>
-                                <td>{{history.trnDescription}}</td>
-                                <td>{{history.remarks}}</td>
-                              </tr>
-                              </ng-container>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <ng-container *ngFor="let history of myhistory">
+                          <tr class="table-secondary">
+                            <th scope="row"> {{history.modifiedDate}} </th>
+                            <td>{{history.totalAmount}}</td>
+                            <td>{{history.amountSettled}}</td>
+                            <td>{{history.amountPending}}</td>
+                            <td>{{history.duedate}}</td>
+                            <td>{{history.trnStatus}}</td>
+                            <td>{{history.trnDescription}}</td>
+                            <td>{{history.remarks}}</td>
+                          </tr>
+                        </ng-container>
                               
                               
-                            </tbody>
-                          </table>
-                        </div>
-                        <div class="modal-footer">
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
             
-                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                             </div>
-                </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 </div>
                 </div>
               </div>
             </div>
-      
-      
-      
-      
-      
-      </td>
-      <td *ngIf=isSupplier><button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTransaction">Update</button>
-        <div class="modal" id="updateTransaction">
+          </div>
+   
+        </td>
+        <td *ngIf=isSupplier><button type="button" class="btn btn-success" data-toggle="modal" data-target="#updateTransaction">Update</button>
+          <div class="modal" id="updateTransaction">
             <div class="modal-dialog" >
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title">Update transaction</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <form role="form" method="post" class="update-transaction" (submit)="updateTransactionData(transaction)">
+                  <form role="form" method="post" class="update-transaction" (submit)="updateTransactionData(transaction)">
                         
-                <fieldset>
+                    <fieldset>
                     
-                    <div class="form-group">
+                      <div class="form-group">
                         <label for="dueDate">Due Date : </label>
                         <input type="text" class="form-control" [(ngModel)]="transaction.duedate" name="dueDate" placeholder="Enter due date (format 2000-01-01)">
                       </div>
@@ -277,59 +273,53 @@
                         <textarea class="form-control" [(ngModel)]="transaction.remarks" name="remarks" rows="3"></textarea>
                       </div>
   
-                  <div class="modal-footer">
-                 <button type="submit" class="btn btn-primary" (click)="updateTransactionData(transaction)">Yes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  </div>
-                </fieldset>
-                    </form>
-                </div>
-                </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary" (click)="updateTransactionData(transaction)">Yes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </fieldset>
+                </form>
               </div>
             </div>
-      
-      
+          </div>
+        </div>
+     
       </td>
       <td *ngIf=isSupplier><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteTransaction">Delete</button>
       
-      <div class="modal" id="deleteTransaction">
+        <div class="modal" id="deleteTransaction">
           <div class="modal-dialog" >
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title">Delete transaction</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
+                  <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                  <form role="form" method="post" class="delete-transaction" (submit)="deleteTransactionData(transaction)">
+                <form role="form" method="post" class="delete-transaction" (submit)="deleteTransactionData(transaction)">
                       
-              <fieldset>
-                  <p>Are you sure you want to delete this transaction?</p>
+                  <fieldset>
+                    <p>Are you sure you want to delete this transaction?</p>
                 
 
-                <div class="modal-footer">
-               <button type="submit" class="btn btn-primary" (click)="deleteTransactionData(transaction)">Yes</button>
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                </div>
-              </fieldset>
-                  </form>
-              </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-primary" (click)="deleteTransactionData(transaction)">Yes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                  </fieldset>
+                </form>
               </div>
             </div>
           </div>
-        </td>
+        </div>
+      </td>
 
-
-          
-      
-
-    
     </tr>
-    </ng-container>
+  </ng-container>
     
     
-  </tbody>
+</tbody>
 </table>
 <!-- <div>
   <ul class="pagination pagination-sm">

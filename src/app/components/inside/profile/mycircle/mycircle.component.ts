@@ -33,33 +33,27 @@ export class MycircleComponent implements OnInit {
           console.log(this.mycircle)
         })
 
-        this.userService
+    this.userService
         .getfullProfile()
         .subscribe(res=>{
           console.log(res) 
           this.myprofile = res.user
         })
 
-
-
   }
+
   removeSubscription(friend){
 
-    
         this.circleService.removeSubscription(friend).subscribe(res=>{
-      // console.log("inside method");
+      
           if (res.state){
           console.log("done removal of subscription");
-         //this.router.navigate(['inside/profile']);
-        }
+         
+          }
     
       
-      });
+        });
     
-    
-    
-      }
-
-  
+  }
 
 }

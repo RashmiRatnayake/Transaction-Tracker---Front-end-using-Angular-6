@@ -17,11 +17,7 @@ export class NotificationsComponent implements OnInit {
   myNotificationsLate:any;
   notificationLate:any;
 
-  isNotificationToday:boolean;
-  isNotificationIn3Days:boolean;
-
-
-  
+ 
   constructor(
 
     private notificationService:NotificationService
@@ -35,52 +31,28 @@ export class NotificationsComponent implements OnInit {
     this.notificationService
         .getNotificationsToday()
         .subscribe(res=>{
-         // console.log(res) 
-          //if (res!=undefined){
-          //if (res.notificationToday.length>0){
-            //this.isNotificationToday=true
-            this.myNotificationsToday = res.notificationToday
-            //console.log(this.isNotificationToday)
-          //}}
-          //else {this.isNotificationToday=false;
-            //console.log(this.isNotificationToday)}
-          
+         
+          this.myNotificationsToday = res.notificationToday
+            
         })
 
     this.notificationService
         .getNotificationsIn3Days()
         .subscribe(res=>{
-          //console.log(res.notificationIn3Days.length>0) 
-          //if (res!='undefined'){
-           // if (res.notificationIn3Days.length>0){
-            //this.isNotificationIn3Days=true
-            this.myNotificationsIn3Days = res.notificationIn3Days
-            //console.log(this.isNotificationIn3Days)
-            })
-          //}
-          //else {this.isNotificationIn3Days=false;}
-        //})
+         
+          this.myNotificationsIn3Days = res.notificationIn3Days
+           
+        })
+          
 
-
-
-
-
-        this.notificationService
+    this.notificationService
         .getNotificationsLate()
         .subscribe(res=>{
-          //console.log(res.notificationIn3Days.length>0) 
-          //if (res!='undefined'){
-           // if (res.notificationIn3Days.length>0){
-            //this.isNotificationIn3Days=true
-            this.myNotificationsLate = res.notificationLate
-            console.log(this.myNotificationsLate)
-            })
-          //}
-          //else {this.isNotificationIn3Days=false;}
-        //})
-          }
-
-
-    
+        
+          this.myNotificationsLate = res.notificationLate
+           //console.log(this.myNotificationsLate)
+        })
+        
+  }
 
 }

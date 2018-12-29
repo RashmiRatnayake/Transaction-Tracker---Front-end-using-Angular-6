@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
-//import { HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-
-//import { JwtHelperService } from '@auth0/angular-jwt';
-
 
 
 
@@ -13,31 +9,34 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+
   user:any;
   token:any;
+
   constructor(
     private http:HttpClient
-  //  public jwtHelper: JwtHelperService
+  
   ) { }
+
   registerUser(user):Observable<any>{
 
-    //console.log(user);
-      let headers=new HttpHeaders();
-      headers.append('Content-Type','application/json');
+    
+    let headers=new HttpHeaders();
+    headers.append('Content-Type','application/json');
 
-      return this.http.post<any>("http://localhost:5550/users/register",user,{headers:headers});//.pipe(map(res=>res.json()));
-
-}
-
-loginUser(user): Observable<any>{
-  let headers=new HttpHeaders();
-  headers.append('Content-Type','application/json');
-
-  return this.http.post<any>("http://localhost:5550/users/login",user,{headers:headers});//.pipe(map(res=>res.json()));
+    return this.http.post<any>("http://localhost:5550/users/register",user,{headers:headers});//.pipe(map(res=>res.json()));
 
 }
 
-myInfo(): Observable<any>{
+  loginUser(user): Observable<any>{
+    let headers=new HttpHeaders();
+    headers.append('Content-Type','application/json');
+
+    return this.http.post<any>("http://localhost:5550/users/login",user,{headers:headers});//.pipe(map(res=>res.json()));
+
+  }
+
+  myInfo(): Observable<any>{
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -45,9 +44,7 @@ myInfo(): Observable<any>{
       })
     };
     return this.http.get("http://localhost:5550/users/profile",httpOptions);
-
-
-}
+  }
 
 
   getProfile(): Observable<any> {
@@ -64,7 +61,6 @@ myInfo(): Observable<any>{
     };
     console.log(httpOptions);
 
- 
     return this.http.get("http://localhost:5550/users/profile",httpOptions);
 
   }

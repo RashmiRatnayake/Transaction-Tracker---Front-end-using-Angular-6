@@ -31,38 +31,35 @@ export class MypostsComponent implements OnInit {
     this.postService
         .getposts()
         .subscribe(res=>{
-          console.log(res) 
+          
           this.mypost = res.post
         })
 
-        this.userService
+    this.userService
         .getfullProfile()
         .subscribe(res=>{
-          //console.log(res.user);
+          
           this.myprofile=res.user
-          
-          
+ 
         })
-
-
 
   }
 
   deletePost(post){
     
-        this.postService.deletePost(post).subscribe(res=>{
-      // console.log("inside method");
-          if (res.state){
-          console.log("done deletion of post");
-         //this.router.navigate(['inside/profile']);
-        }
+    this.postService.deletePost(post).subscribe(res=>{
+     
+      if (res.state){
+        console.log("done deletion of post");
+         
+      }
     
       
-      });
+    });
     
     
     
-      }
+  }
 
   newPostData(){
     const newpost={
@@ -72,18 +69,16 @@ export class MypostsComponent implements OnInit {
       
     };
    
-  this.postService.addPost(newpost).subscribe(res=>{
- console.log("inside method");
-    if (res.state){
-    console.log("done adding post");
-   //this.router.navigate(['inside/profile']);
+    this.postService.addPost(newpost).subscribe(res=>{
+      
+      if (res.state){
+      console.log("done adding post");
+      
+      }
+
+    });
+
+
   }
-
-
-});
-
-
-
-}
 
 }

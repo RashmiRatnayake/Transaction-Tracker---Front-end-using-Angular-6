@@ -38,8 +38,6 @@ export class UserListService {
   
   }
 
-
-
   fetchToken(){
     const token = localStorage.getItem("token");
     this.token = token;

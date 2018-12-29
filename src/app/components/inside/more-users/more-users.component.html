@@ -1,55 +1,52 @@
-
 <div class="container">
                 
   <ul class="list-group">
     <ng-container *ngFor="let user of userlist" >
                     
-        <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
             {{user.businessName}}
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#viewUser">View Profile</button>
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#viewUser">View Profile</button>
              
-            <div class="modal" id="viewUser">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Business Name :{{user.businessName}}</h5>
-                      <button type="button" class="btn btn-primary" (click)="subscribeUser(user)" style="float: right;">Subscribe</button>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <h6 class="modal-title">Business Tagline :{{user.tagline}}</h6>
-                            <p>Description : {{user.description}}</p> 
-             
-                        </div>
-                      <div class="container">
-                       <p>Business Address : {{user.businessAddress}}</p> 
-                       <p>Contact Name : {{user.contactName}}</p> 
-                       <p>Contact Designation : {{user.contactDesignation}}</p> 
-                       <p>Contact Number : {{user.contactNo}}</p> 
-                       <p>Contact Email : {{user.contactEmail}}</p> 
-                      </div>
-                      <div class="container">
-                          <p>Bank : {{user.bank}}</p> 
-                          <p>Account Name : {{user.accountName}}</p> 
-                          <p>Account Number : {{user.accountNo}}</p> 
-                          
-                         </div>
-                          <div class="modal-footer">
-                            
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          </div>
-                       
-                    </div>
-                  </div>
+          <div class="modal" id="viewUser">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Business Name :{{user.businessName}}</h5>
+                  <button type="button" class="btn btn-primary" (click)="subscribeUser(user)" style="float: right;">Subscribe</button>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-                    
+                <div class="modal-body">
+                  <div class="container">
+                    <h6 class="modal-title">Business Tagline :{{user.tagline}}</h6>
+                    <p>Description : {{user.description}}</p> 
+             
+                  </div>
+                  <div class="container">
+                    <p>Business Address : {{user.businessAddress}}</p> 
+                    <p>Contact Name : {{user.contactName}}</p> 
+                    <p>Contact Designation : {{user.contactDesignation}}</p> 
+                    <p>Contact Number : {{user.contactNo}}</p> 
+                    <p>Contact Email : {{user.contactEmail}}</p> 
+                  </div>
+                  <div class="container">
+                    <p>Bank : {{user.bank}}</p> 
+                    <p>Account Name : {{user.accountName}}</p> 
+                    <p>Account Number : {{user.accountNo}}</p>         
+                  </div>
+                  <div class="modal-footer">       
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                       
+                </div>
               </div>
+            </div>
+                    
+          </div>
             
             
-          </li>
+      </li>
                 
     </ng-container>
   </ul>

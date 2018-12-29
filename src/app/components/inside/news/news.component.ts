@@ -30,10 +30,6 @@ export class NewsComponent implements OnInit {
           this.mynews = res.news
         })
 
-    
-
-
-
   }
 
 }

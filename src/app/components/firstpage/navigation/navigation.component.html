@@ -4,8 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
-      <a class="navbar-brand" href="#">Transaction Tracker</a>
+  <a class="navbar-brand" href="#">Transaction Tracker</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -18,17 +17,14 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['about']">About</a>
       </li>
-
-
     </ul>
-
   </div>
 </nav>
+
 <div style="text-align:center">
   <br>
   <h1>
 	Welcome to Transaction Tracker!
-
   </h1>
   <app-date></app-date>
 
@@ -36,12 +32,11 @@
   <br>
 
   <a [routerLink]="['login1']"><button type="button" class="btn btn-primary btn-lg">Login</button></a>
-&nbsp;&nbsp;
+    &nbsp;&nbsp;
   <a [routerLink]="['register1']"><button type="button" class="btn btn-primary btn-lg">Register</button></a>
 
-
-
 </div>
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>
